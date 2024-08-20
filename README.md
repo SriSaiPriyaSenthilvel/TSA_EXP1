@@ -23,21 +23,21 @@ with zipfile.ZipFile('/content/powerconsumption.csv (2).zip') as z:
     with z.open(z.namelist()[0]) as f:
         data = pd.read_csv(f)
 print(data.columns)
-
 data['Datetime'] = pd.to_datetime(data['Datetime'])
 data.set_index('Datetime', inplace=True)
-plt.plot(data.index, data['Temperature'], label='Temperature')
-plt.title("Daily Minimum Temperature")
+plt.figure(figsize=(10, 6))
+plt.plot(data.index, data['PowerConsumption_Zone2'], label='Zone 1')
+plt.title("Power Consumption - Zone 1")
 plt.xlabel("Date")
 plt.xticks(rotation=45)
-plt.ylabel("Temperature")
+plt.ylabel("Power Consumption")
 plt.grid(True)
 plt.legend()
 plt.show()
 ```
 # OUTPUT:
 
-![image](https://github.com/user-attachments/assets/58cb6ec8-6f54-44ba-97cd-5276822b5630)
+![image](https://github.com/user-attachments/assets/5d426f53-0096-4cc9-8687-b46cb4bf737b)
 
 # RESULT:
 Thus we have created the python code for plotting the time series of given data.
