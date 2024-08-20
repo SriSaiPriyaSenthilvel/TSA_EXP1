@@ -31,25 +31,26 @@ REGISTER NUMBER: 212222240103
 import pandas as pd
 import zipfile
 import matplotlib.pyplot as plt
+
 with zipfile.ZipFile('/content/powerconsumption.csv (2).zip') as z:
     with z.open(z.namelist()[0]) as f:
         data = pd.read_csv(f)
 print(data.columns)
 data['Datetime'] = pd.to_datetime(data['Datetime'])
 data.set_index('Datetime', inplace=True)
-plt.figure(figsize=(10, 6))
-plt.plot(data.index, data['PowerConsumption_Zone2'], label='Zone 1')
-plt.title("Power Consumption - Zone 1")
+plt.plot(data.index, data['Temperature'], label='Temperature')
+plt.title("Daily Minimum Temperature")
 plt.xlabel("Date")
 plt.xticks(rotation=45)
-plt.ylabel("Power Consumption")
+plt.ylabel("Temperature")
 plt.grid(True)
 plt.legend()
 plt.show()
+
 ```
 
 # OUTPUT:
-![image](https://github.com/user-attachments/assets/5d426f53-0096-4cc9-8687-b46cb4bf737b)
+![image](https://github.com/user-attachments/assets/57609a0f-ffe7-4560-8246-0a6f25b4df99)
 
 <BR>
 
