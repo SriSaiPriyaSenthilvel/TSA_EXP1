@@ -19,22 +19,13 @@ REGISTER NUMBER: 212222240103
 import pandas as pd
 import zipfile
 import matplotlib.pyplot as plt
-
-# Load the zipped CSV file directly
 with zipfile.ZipFile('/content/powerconsumption.csv (2).zip') as z:
     with z.open(z.namelist()[0]) as f:
         data = pd.read_csv(f)
-
-# Check the column names
 print(data.columns)
 
-# Use 'Datetime' instead of 'Date'
 data['Datetime'] = pd.to_datetime(data['Datetime'])
-
-# Set 'Datetime' as the index
 data.set_index('Datetime', inplace=True)
-
-# Plot the temperature data
 plt.plot(data.index, data['Temperature'], label='Temperature')
 plt.title("Daily Minimum Temperature")
 plt.xlabel("Date")
