@@ -15,13 +15,11 @@ To Develop a python program to Plot a time series data of temperature.
 2. Read the dataset using the pandas
 <BR>
 
-3. Calculate the mean for the respective column.
+
+3. Plot the data according to need and can be altered monthly, or yearly.
 <BR>
 
-4. Plot the data according to need and can be altered monthly, or yearly.
-<BR>
-
-5. Display the graph.
+4. Display the graph.
 <BR>
    
 # PROGRAM:
