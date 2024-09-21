@@ -55,4 +55,4 @@ plt.show()
 <BR>
 
 # RESULT:
-Thus we have created the python code for plotting the time series of given data.
+Thus, The python code for plotting the time series of given dataset is successfully executed.
